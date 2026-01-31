@@ -1,5 +1,5 @@
 import db from  "../Db/db.js";
-const table ="users";
+const table ="authusers";
 class UserModel {
     static async createUserModel({ name, email, password }) {
         const sql = `INSERT INTO ${table}(name,email,password) VALUES (?,?,?)`;

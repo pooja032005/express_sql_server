@@ -3,8 +3,8 @@ import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import userRoute from './Routes/userRoute.js';
+import authUserRoute from './Routes/authUserRoutes.js'; 
 dotenv.config();
-
 const app=express();
 const PORT=process.env.PORT || 5000;
 //MIDDLEWARE
@@ -14,6 +14,7 @@ app.use(cors())
 connectDB()
 //ROUTES DEFINITION
 app.use('/api/user', userRoute);
+app.use('/api/auth',authUserRoute)
 //http://localhost:5000/api/user/signup
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
